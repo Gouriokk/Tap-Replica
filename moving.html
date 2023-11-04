@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            cursor: none;
+        }
+
+        .cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff0000; /* Customize the circle's color */
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="content">
+        <!-- Your website content goes here -->
+    </div>
+    <script>
+        const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`; // Offset by half the circle size
+        });
+    </script>
+</body>
+</html>
